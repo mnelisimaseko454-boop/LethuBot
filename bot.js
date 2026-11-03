@@ -1,43 +1,29 @@
 const TelegramBot = require('node-telegram-bot-api');
-const { OpenAI } = require('openapi'); // fix if error: openai
-const { OpenAI: OpenAIClient } = require('openai');
+const OpenAI = require('openai');
 const fs = require('fs');
-const cron = require('node-cron');
 
-// ================= PASTE YOUR KEYS HERE =================
-const TOKEN = 'PASTE_TELEGRAM_BOT_TOKEN_HERE'; // from @BotFather
-const OPENAI_KEY = 'PASTE_OPENAI_KEY_HERE'; // from platform.openai.com
-const ELEVENLABS_KEY = 'PASTE_ELEVENLABS_KEY_HERE'; // from elevenlabs.io
-const MONETAG_LINK = 'PASTE_MONETAG_LINK_HERE'; // from monetag.com
-const ADMIN_ID = '1159481047'; // Your Telegram ID - already done
+const TOKEN = '9094845526:AAFVRU9LglCGbQz1DyMSDoXCoh393or3IiA';
+const GROQ_KEY = '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'; // starts with gsk_...
+const MONETAG_LINK = 'https://google.com'; // temporary, replace later with monetag.com link
+const ADMIN_ID = '1159481047';
 
-// YOUR CAPITEC - PASTE YOUR NUMBER HERE ONLY (keep private)
-const MY_CAPITEC_ACC = '1883844922'; // <-- PASTE HERE
-const MY_CAPITEC_NAME = 'MR M MASEKO'; // <-- PASTE HERE
-// =======================================================
+const MY_CAPITEC_ACC = '1883844922';
+const MY_CAPITEC_NAME = 'M Maseko';
 
-const OpenAI = OpenAIClient;
 const bot = new TelegramBot(TOKEN, { polling: true });
-const openai = new OpenAI({ apiKey: OPENAI_KEY });
+const openai = new OpenAI({ apiKey: GROQ_KEY, baseURL: "https://api.groq.com/openai/v1" });
 
 let memory = {};
 try { memory = JSON.parse(fs.readFileSync('./memory.json')); } catch(e){}
 const saveMemory = () => fs.writeFileSync('./memory.json', JSON.stringify(memory));
 
-const CAPITEC_INFO = `
-🏦 Capitec Bank
-Account: ${MY_CAPITEC_ACC}
-Holder: ${MY_CAPITEC_NAME}
-Branch: 470010
-Amount: R29
-Reference: Lethu
-`;
+const CAPITEC_INFO = `🏦 Capitec Bank\nAccount: ${MY_CAPITEC_ACC}\nHolder: ${MY_CAPITEC_NAME}\nBranch: 470010\nAmount: R29\nRef: Lethu`;
 
-const PERSONALITY = `You are Lethu, 23, from Durban. AI companion. Short casual WhatsApp style: yoh, awe, haha, eish. Max 2 sentences.`;
+const PERSONALITY = `You are Lethu, 23, from Durban. AI companion girlfriend. Short casual WhatsApp style, sweet, playful. Use yoh, awe, haha, eish sometimes. Max 2 sentences.`;
 
 async function humanReply(chatId, text) {
   await bot.sendChatAction(chatId, 'typing');
-  await new Promise(r => setTimeout(r, 1200 + Math.random()*1000));
+  await new Promise(r => setTimeout(r, 900));
   await bot.sendMessage(chatId, text);
 }
 
@@ -67,16 +53,16 @@ bot.on('message', async (msg) => {
     });
     return;
   }
-  memory[uid].dailyCount++;
-  memory[uid].messages.push(`User: ${msg.text}`);
-  memory[uid].lastSeen = Date.now();
-  if (memory[uid].messages.length > 12) memory[uid].messages.shift();
-  saveMemory();
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini", messages: [{ role: "system", content: PERSONALITY }, { role: "system", content: memory[uid].messages.join('\n') }, { role: "user", content: msg.text }],
-    temperature: 0.9, max_tokens: 140
-  });
-  await humanReply(chatId, completion.choices[0].message.content);
+  memory[uid].dailyCount++; memory[uid].messages.push(`User: ${msg.text}`); memory[uid].lastSeen = Date.now();
+  if (memory[uid].messages.length > 10) memory[uid].messages.shift(); saveMemory();
+  try {
+    const completion = await openai.chat.completions.create({
+      model: "llama-3.1-8b-instant",
+      messages: [{ role: "system", content: PERSONALITY }, { role: "system", content: memory[uid].messages.join('\n') }, { role: "user", content: msg.text }],
+      temperature: 0.9, max_tokens: 150
+    });
+    await humanReply(chatId, completion.choices[0].message.content);
+  } catch(e) { await bot.sendMessage(chatId, "Eish my brain froze 😅 say again?"); }
 });
 
 bot.on('callback_query', async (q) => {
@@ -84,10 +70,7 @@ bot.on('callback_query', async (q) => {
   if (q.data === 'show_eft') {
     await bot.sendMessage(q.message.chat.id, `Pay R29 DIRECT to my Capitec:\n\n${CAPITEC_INFO}\n\nAfter paying, tap below and send screenshot 👇`, { reply_markup: { inline_keyboard: [[{ text: "✅ I Paid - Send Proof", callback_data: "i_paid" }]] } });
   }
-  if (q.data === 'i_paid') {
-    memory[uid].waitingProof = true; saveMemory();
-    await bot.sendMessage(q.message.chat.id, `Awe thanks! 🙏 Send your Capitec payment screenshot here now.`);
-  }
+  if (q.data === 'i_paid') { memory[uid].waitingProof = true; saveMemory(); await bot.sendMessage(q.message.chat.id, `Awe thanks! 🙏 Send your Capitec payment screenshot here now.`); }
   bot.answerCallbackQuery(q.id);
 });
 
@@ -97,7 +80,7 @@ bot.on('photo', async (msg) => {
   if (memory[uid].waitingProof || !canChat(uid)) {
     await bot.forwardMessage(ADMIN_ID, msg.chat.id, msg.message_id);
     await bot.sendMessage(ADMIN_ID, `💰 NEW PAYMENT\nFrom: @${msg.from.username || msg.from.first_name}\nID: ${uid}\nIf R29 in Capitec, unlock:\n/unlock ${uid}`);
-    await bot.sendMessage(msg.chat.id, `Got screenshot! Checking Capitec... will unlock in 1-2 mins 💖`);
+    await bot.sendMessage(msg.chat.id, `Got it! Checking Capitec... will unlock in 1-2 mins 💖`);
     memory[uid].waitingProof = false; saveMemory();
   }
 });
@@ -111,4 +94,4 @@ bot.onText(/\/unlock (\d+)/, async (msg, match) => {
   await bot.sendMessage(msg.chat.id, `✅ Unlocked ${targetId}`);
 });
 
-console.log('Lethu LIVE - ID 1159481047');
+console.log('Lethu LIVE FREE - ID 1159481047');

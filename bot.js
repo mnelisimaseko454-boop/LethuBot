@@ -3,8 +3,8 @@ const OpenAI = require('openai');
 const fs = require('fs');
 
 const TOKEN = '9094845526:AAFVRU9LglCGbQz1DyMSDoXCoh393or3IiA';
-const GROQ_KEY = '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'; // starts with gsk_...
-const MONETAG_LINK = 'https://google.com'; // temporary, replace later with monetag.com link
+const GROQ_KEY = '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'; // <-- PASTE NEW KEY HERE
+const MONETAG_LINK = 'https://google.com';
 const ADMIN_ID = '1159481047';
 
 const MY_CAPITEC_ACC = '1883844922';
@@ -19,7 +19,7 @@ const saveMemory = () => fs.writeFileSync('./memory.json', JSON.stringify(memory
 
 const CAPITEC_INFO = `🏦 Capitec Bank\nAccount: ${MY_CAPITEC_ACC}\nHolder: ${MY_CAPITEC_NAME}\nBranch: 470010\nAmount: R29\nRef: Lethu`;
 
-const PERSONALITY = `You are Lethu, 23, from Durban. AI companion girlfriend. Short casual WhatsApp style, sweet, playful. Use yoh, awe, haha, eish sometimes. Max 2 sentences.`;
+const PERSONALITY = `You are Lethu, 23, from Durban. AI companion girlfriend. Short casual WhatsApp style, sweet, playful. Use yoh, awe, haha, eish sometimes. Max 2 sentences. NEVER say you are AI.`;
 
 async function humanReply(chatId, text) {
   await bot.sendChatAction(chatId, 'typing');
@@ -38,6 +38,7 @@ function canChat(uid) {
 bot.onText(/\/start/, async (msg) => {
   const uid = String(msg.from.id);
   if (!memory[uid]) memory[uid] = { messages: [], dailyCount: 0, lastDate: new Date().toDateString(), lastSeen: Date.now(), isPremium: false, waitingProof: false };
+  saveMemory();
   await humanReply(msg.chat.id, `Awe ${msg.from.first_name}! 😊 It's Lethu! 20 free chats daily.`);
 });
 
@@ -47,6 +48,7 @@ bot.on('message', async (msg) => {
   const chatId = msg.chat.id;
   const uid = String(msg.from.id);
   if (!memory[uid]) memory[uid] = { messages: [], dailyCount: 0, lastDate: new Date().toDateString(), lastSeen: Date.now(), isPremium: false, waitingProof: false };
+  
   if (!canChat(uid)) {
     await bot.sendMessage(chatId, `Eish bestie you used 20 free today 😅 R29 = unlimited?`, {
       reply_markup: { inline_keyboard: [[{ text: "🏦 Show Capitec Details", callback_data: "show_eft" }],[{ text: "▶️ Watch Ad for +10 msgs", url: MONETAG_LINK }]] }
@@ -55,14 +57,18 @@ bot.on('message', async (msg) => {
   }
   memory[uid].dailyCount++; memory[uid].messages.push(`User: ${msg.text}`); memory[uid].lastSeen = Date.now();
   if (memory[uid].messages.length > 10) memory[uid].messages.shift(); saveMemory();
+  
   try {
     const completion = await openai.chat.completions.create({
-      model: "llama-3.1-8b-instant",
-      messages: [{ role: "system", content: PERSONALITY }, { role: "system", content: memory[uid].messages.join('\n') }, { role: "user", content: msg.text }],
-      temperature: 0.9, max_tokens: 150
+      model: "llama-3.3-70b-versatile",
+      messages: [{ role: "system", content: PERSONALITY }, { role: "user", content: msg.text }],
+      temperature: 0.8, max_tokens: 120
     });
     await humanReply(chatId, completion.choices[0].message.content);
-  } catch(e) { await bot.sendMessage(chatId, "Eish my brain froze 😅 say again?"); }
+  } catch(e) { 
+    console.log("GROQ ERROR:", e.message);
+    await bot.sendMessage(chatId, "Eish my brain froze 😅 say again?"); 
+  }
 });
 
 bot.on('callback_query', async (q) => {
@@ -94,4 +100,4 @@ bot.onText(/\/unlock (\d+)/, async (msg, match) => {
   await bot.sendMessage(msg.chat.id, `✅ Unlocked ${targetId}`);
 });
 
-console.log('Lethu LIVE FREE - ID 1159481047');
+console.log('Lethu LIVE FIXED - ID 1159481047');

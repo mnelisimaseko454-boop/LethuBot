@@ -5,70 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>LethuChatBot - WhatsApp Style</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-<!-- ========================================================= -->
-<!-- ONCLICKA - LethuChatBot ONLY - FINAL -->
-<!-- Rewarded: AD Code #472563 / Spot ID 6155340 -->
-<!-- Inpage:   AD Code #472564 / Spot ID 6155341 -->
-<!-- DO NOT USE Jet Crash codes here -->
-<!-- ========================================================= -->
-
-<!-- ONCLICKA REWARDED - 6155340 - FINAL -->
+<!-- ONCLICKA - LethuChatBot ONLY -->
+<!-- Rewarded Spot 6155340 / Inpage AD 472564 -->
 <script src="https://js.onclckvd.com/in-stream-ad-admanager/tma.js"></script>
 <script>
   let onclickaRewardedShow = null;
-  window.initCdTma?.({ id: '6155340' }).then(show => { onclickaRewardedShow = show; console.log('LethuChatBot Rewarded ready 6155340'); }).catch(e => console.log(e));
+  window.initCdTma?.({ id: '6155340' }).then(show => { onclickaRewardedShow = show; }).catch(e => console.log(e));
 </script>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 body{background:#ECE5DD;height:100vh;display:flex;flex-direction:column;overflow:hidden}
-.wa-header{background:#075E54;color:#fff;display:flex;align-items:center;gap:10px;padding:10px 12px;z-index:10}
-.wa-header .back{font-size:20px}
-.wa-avatar{width:40px;height:40px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.wa-info{flex:1}
-.wa-info b{font-size:16px;display:block}
-.wa-info span{font-size:12px;color:#d0e8d5}
-.wa-icons{font-size:20px;display:flex;gap:16px}
+.wa-header{background:#075E54;color:#fff;display:flex;align-items:center;gap:10px;padding:10px 12px}
+.wa-avatar{width:40px;height:40px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:22px}
+.wa-info{flex:1}.wa-info b{font-size:16px;display:block}.wa-info span{font-size:12px;color:#d0e8d5}
+.group-banner{background:#0B1D3A;color:#FFD700;padding:10px 12px;text-align:center;font-size:13px;font-weight:700}
+.group-banner a{color:#fff;background:#FFD700;color:#000;padding:6px 14px;border-radius:20px;text-decoration:none;display:inline-block;margin-top:6px;font-weight:800}
 .ad-top{background:#fff;border-bottom:1px solid #ddd;padding:6px 10px;text-align:center;font-size:11px;color:#888}
-.ad-top b{color:#075E54}
-.quick{display:flex;gap:8px;overflow-x:auto;padding:8px 10px;background:#ECE5DD;white-space:nowrap}
-.quick button{background:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;color:#075E54;box-shadow:0 1px 2px rgba(0,0,0,.1);white-space:nowrap}
+.quick{display:flex;gap:8px;overflow-x:auto;padding:8px 10px;white-space:nowrap}
+.quick button{background:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;color:#075E54;white-space:nowrap}
 .quick button.vip{background:#075E54;color:#fff}
-.chat{flex:1;overflow-y:auto;padding:12px 10px;display:flex;flex-direction:column;gap:8px;background:#ECE5DD}
-.msg{max-width:80%;padding:8px 10px;border-radius:8px;font-size:15px;line-height:1.4;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.15)}
+.chat{flex:1;overflow-y:auto;padding:12px 10px;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:85%;padding:8px 10px;border-radius:8px;font-size:15px;line-height:1.4;box-shadow:0 1px 1px rgba(0,0,0,.15)}
 .msg small{font-size:10px;color:#888;display:block;text-align:right;margin-top:4px}
 .msg.buddy{background:#fff;align-self:flex-start;border-top-left-radius:0}
 .msg.me{background:#DCF8C6;align-self:flex-end;border-top-right-radius:0}
-.voice-msg{display:flex;align-items:center;gap:10px;background:#fff;padding:8px 10px;border-radius:8px;max-width:80%;align-self:flex-start;box-shadow:0 1px 1px rgba(0,0,0,.15)}
-.voice-msg button{width:36px;height:36px;border-radius:50%;background:#075E54;color:#fff;border:none;font-size:16px}
-.voice-bar{flex:1;height:4px;background:#ddd;border-radius:4px;position:relative}
-.voice-bar i{position:absolute;left:0;top:0;height:100%;width:40%;background:#25D366;border-radius:4px}
-.day-label{align-self:center;background:#fff;padding:4px 10px;border-radius:8px;font-size:11px;color:#555;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.day-label{align-self:center;background:#fff;padding:4px 10px;border-radius:8px;font-size:11px;color:#555}
 .typing{align-self:flex-start;background:#fff;padding:8px 12px;border-radius:8px;font-size:14px;color:#555;display:none;margin:0 10px 8px}
 .input-bar{display:flex;align-items:center;gap:8px;padding:8px;background:#ECE5DD}
-.input-wrap{flex:1;display:flex;align-items:center;gap:8px;background:#fff;border-radius:25px;padding:8px 12px}
+.input-wrap{flex:1;display:flex;align-items:center;background:#fff;border-radius:25px;padding:8px 12px}
 .input-wrap input{flex:1;border:none;outline:none;font-size:15px}
-.input-wrap span{font-size:20px;color:#8696A0}
-.send-btn{width:48px;height:48px;border-radius:50%;background:#00A884;color:#fff;border:none;font-size:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.mood-row{display:flex;gap:8px;margin:6px 0}
-.mood-row button{flex:1;padding:10px;border:none;border-radius:10px;font-size:14px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.send-btn{width:48px;height:48px;border-radius:50%;background:#00A884;color:#fff;border:none;font-size:20px;flex-shrink:0}
+.mood-row{display:flex;gap:8px;margin:6px 0}.mood-row button{flex:1;padding:10px;border:none;border-radius:10px;background:#fff}
 </style>
 </head>
 <body>
-
-<!-- ONCLICKA INPAGE - LethuChatBot #472564 / Spot 6155341 - YOUR SCRIPT - DO NOT REMOVE -->
+<!-- ONCLICKA INPAGE #472564 -->
 <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=472564,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
-<!-- END ONCLICKA INPAGE #472564 -->
 
 <div class="wa-header">
   <div class="back">←</div>
   <div class="wa-avatar">🤝</div>
   <div class="wa-info"><b>LethuChatBot</b><span>online • always here for you</span></div>
-  <div class="wa-icons"><span>📹</span><span>📞</span><span>⋮</span></div>
+  <!-- REMOVED: video + phone icons -->
 </div>
 
-<div class="ad-top"><span>ADVERTISEMENT • <b>OnClickA</b></span><div id="onclicka-banner" style="min-height:30px;margin-top:4px"></div></div>
+<div class="group-banner">👥 JOIN SHAYA EARN NETWORK<br><span style="font-weight:400;font-size:12px">Watch Ads • Earn Coins • Learn How To Withdraw</span><br><a href="https://t.me/ShayaEarnNetwork" target="_blank">Join Group - t.me/ShayaEarnNetwork</a></div>
+
+<div class="ad-top"><span>ADVERTISEMENT • <b>OnClickA</b></span></div>
 
 <div class="quick">
   <button onclick="quickMood()">😊 Mood</button>
@@ -80,64 +63,71 @@ body{background:#ECE5DD;height:100vh;display:flex;flex-direction:column;overflow
 
 <div class="chat" id="chat">
   <div class="day-label">TODAY</div>
-  <div class="msg buddy">Hey! 👋 I'm LethuChatBot. How are you feeling today?<small>07:00 ✓✓</small></div>
-  <div class="msg me">A bit tired tbh<small>07:01 ✓✓</small></div>
-  <div class="msg buddy">Thanks for being honest. 🫂 That takes courage. Want to try a tiny reset with me? Drink water, step outside for 2 mins, then tell me one thing on your mind.<small>07:01 ✓✓</small></div>
+  <div class="msg buddy">Hey! 👋 I'm LethuChatBot. I don't just ask questions — I give you a plan. Tell me ONE thing you want to work on today and I'll build the next step for you.<small>07:00 ✓✓</small></div>
 </div>
 <div class="typing" id="typing">LethuChatBot is typing...</div>
 
 <div class="input-bar">
   <div class="input-wrap">
     <input id="msgInput" placeholder="Message" onkeypress="if(event.key==='Enter') sendMsg()">
-    <span>📎</span><span>📷</span>
+    <!-- REMOVED: paperclip + camera -->
   </div>
   <button class="send-btn" onclick="sendMsg()">➤</button>
-  <button class="send-btn" style="background:#075E54" onclick="sendVoiceNote()">🎤</button>
+  <!-- REMOVED: green mic button -->
 </div>
 
 <script>
 let tg = window.Telegram?.WebApp;
-if(tg){ tg.ready(); tg.expand(); tg.setHeaderColor('#075E54'); tg.setBackgroundColor('#ECE5DD'); }
-let messages = JSON.parse(localStorage.getItem('lethu_msgs') || '[]');
-let goals = JSON.parse(localStorage.getItem('lethu_goals') || '[]');
-let streak = parseInt(localStorage.getItem('lethu_streak') || '0');
+if(tg){ tg.ready(); tg.expand(); tg.setHeaderColor('#075E54'); }
+let messages = JSON.parse(localStorage.getItem('lethu_msgs')||'[]');
+let lastReply = '';
 function nowTime(){ return new Date().toLocaleTimeString('en-ZA',{hour:'2-digit',minute:'2-digit'}); }
 function addMsg(text, who){
-  const chat = document.getElementById('chat');
-  const div = document.createElement('div');
-  div.className = 'msg ' + who;
-  div.innerHTML = text + `<small>${nowTime()} ✓✓</small>`;
-  chat.appendChild(div); chat.scrollTop = chat.scrollHeight;
-  messages.push({text, who, time: Date.now()});
-  localStorage.setItem('lethu_msgs', JSON.stringify(messages.slice(-50)));
+  const chat=document.getElementById('chat');
+  const div=document.createElement('div'); div.className='msg '+who;
+  div.innerHTML=text+`<small>${nowTime()} ✓✓</small>`; chat.appendChild(div); chat.scrollTop=chat.scrollHeight;
+  messages.push({text,who}); localStorage.setItem('lethu_msgs',JSON.stringify(messages.slice(-50)));
+}
+function proactiveReply(userText){
+  const t=userText.toLowerCase();
+  let reply='';
+  if(t.includes('telegram bot')||t.includes('create a bot')||t.includes('make a bot')){
+    reply=`Let's DO it 🤝\n\nStep 1: Open @BotFather → /newbot → name it\nStep 2: Copy TOKEN\nStep 3: Tell me what it should DO\n\nReply 1=Check-in bot, 2=Earn bot, 3=Game bot — I'll build the plan now.`;
+  } else if(t==='1'){ reply=`1️⃣ Check-in bot — GO:\n\n✅ Features: Mood + Goals + Journal + 3x check-ins\n✅ Next: Do you have Render? Reply YES / NO and I'll give you the next click.`; }
+  else if(t==='2'){ reply=`2️⃣ Earn bot — like Shaya:\n\n👥 Join Shaya Earn Network first: t.me/ShayaEarnNetwork\n📺 Users watch ads → earn coins\n💰 Withdraw via group\n\nWant the Earn bot button layout? Reply YES.`; }
+  else if(t==='3'){ reply=`3️⃣ Game bot — pick one: CRASH / SLOTS / QUIZ. Reply one word and I'll give you logic + monetization.`; }
+  else if(t.includes('sad')||t.includes('tired')||t.includes('lonely')||t.includes('stress')||t.includes('nothing')){
+    reply=`Thanks for being real. Let's not just sit in it — do this NOW:\n\n1. Drink water\n2. 3 slow breaths\n3. Tell me ONE word for what's heavy\n\nI'll turn it into a tiny step. What's the word?`;
+  } else if(t.includes('thank')){ reply=`Anytime 🤝 Want me to check in again at 7pm? Reply YES and I'll do it.`; }
+  else if(t.includes('goal')||t.includes('gym')||t.includes('study')){
+    reply=`Got it — let's make it real:\n\n🎯 Goal: "${userText}"\n📅 When? Reply TODAY / THIS WEEK / THIS MONTH and I'll save + remind you.`;
+  } else if(t.includes('hi')||t.includes('hello')||t.includes('hey')){
+    reply=`Hey! 👋 Quick check — how are you RIGHT NOW? 😁 Great / 🙂 Okay / 😐 Meh / 😞 Low — just send one word.`;
+  } else {
+    const options=[
+      `Okay — "${userText}". Let's make it useful:\n\nDo you want me to A) Make a plan, B) Journal prompt, C) Save as goal?\nReply A, B or C and I'll do it now.`,
+      `Got you on "${userText}". Here's my suggestion:\n\n✅ Smallest step in next 10 mins: ?\nTell me what's blocking you in 1 sentence and I'll give you the step.`,
+      `"${userText}" — let's break it:\n1. Main problem in 1 sentence?\n2. Outcome you want?\nGive me #1 and I'll build the plan.`
+    ];
+    reply = options.filter(o=>o!==lastReply)[Math.floor(Math.random()*2)] || options[0];
+  }
+  lastReply = reply; return reply;
 }
 function buddyReply(userText){
   document.getElementById('typing').style.display='block';
-  setTimeout(()=>{
-    document.getElementById('typing').style.display='none';
-    const t = userText.toLowerCase(); let reply='';
-    if(t.includes('sad')||t.includes('tired')||t.includes('lonely')||t.includes('stress')||t.includes('anxious')) reply=`Thanks for telling me that. 🫂 That sounds heavy. Want to try this? 1. Take 3 slow breaths 2. Tell me what's weighing most 3. We'll pick ONE tiny step together. I'm here, no judgement.`;
-    else if(t.includes('thank')) reply=`Anytime 🤝 That's what I'm here for. You're doing better than you think just by showing up.`;
-    else if(t.includes('goal')||t.includes('gym')||t.includes('study')) reply=`Got it 💪 Want me to save that as a goal? Tap 🎯 Goal above and I'll remind you about it in check-ins.`;
-    else if(t.includes('good')||t.includes('great')||t.includes('happy')) reply=`Love that for you! 😁 What's making today good? Tell me one win.`;
-    else { const r=[`Heard you 👂 Tell me a bit more — what's on your mind about that?`,`Thanks for sharing that. How does that make you feel right now?`,`I'm here 💬 Want to turn that into a goal, journal, or just vent? All okay.`,`That makes sense. What's one small step you could take about that today?`]; reply=r[Math.floor(Math.random()*r.length)]; }
-    addMsg(reply,'buddy');
-    if(tg) tg.HapticFeedback?.impactOccurred('light');
-  },1200);
+  setTimeout(()=>{ document.getElementById('typing').style.display='none'; addMsg(proactiveReply(userText),'buddy'); if(tg) tg.HapticFeedback?.impactOccurred('light'); },1000);
 }
 function sendMsg(){ const inp=document.getElementById('msgInput'); const text=inp.value.trim(); if(!text) return; addMsg(text,'me'); inp.value=''; buddyReply(text); }
-function quickMood(){ const chat=document.getElementById('chat'); const div=document.createElement('div'); div.className='msg buddy'; div.innerHTML=`How are you feeling right now?<div class="mood-row"><button onclick="logMood('😁 Great')">😁 Great</button><button onclick="logMood('🙂 Okay')">🙂 Okay</button></div><div class="mood-row"><button onclick="logMood('😐 Meh')">😐 Meh</button><button onclick="logMood('😞 Low')">😞 Low</button></div><small>${nowTime()} ✓✓</small>`; chat.appendChild(div); chat.scrollTop=chat.scrollHeight; }
-function logMood(m){ addMsg(m,'me'); streak++; localStorage.setItem('lethu_streak',streak); if(tg) tg.sendData(JSON.stringify({action:'mood',mood:m})); setTimeout(()=>addMsg(`Mood logged: ${m} — 🔥 Streak: ${streak} days.`,'buddy'),600); }
-function quickGoal(){ const g=prompt('What is your goal? Example: Gym 3x this week'); if(!g) return; goals.push({text:g,done:false}); localStorage.setItem('lethu_goals',JSON.stringify(goals)); if(tg) tg.sendData(JSON.stringify({action:'goal',text:g})); addMsg('🎯 New goal: '+g,'me'); setTimeout(()=>addMsg(`Goal saved! 🎯 I'll remind you about "${g}" in check-ins. You've got this!`,'buddy'),600); }
-function quickJournal(){ const p=["What made you smile today, even a little?","What's one thing you're avoiding? Why?","What do you need more of — rest, focus, or connection?","Write 3 things you're grateful for today."]; addMsg('📓 Journal prompt: '+p[Math.floor(Math.random()*p.length)],'buddy'); }
-function sendVoiceNote(){ const chat=document.getElementById('chat'); const div=document.createElement('div'); div.className='voice-msg'; div.innerHTML=`<button>▶️</button><div><b>Voice note</b><div class="voice-bar"><i></i></div><small>0:12 • ${nowTime()}</small></div>`; chat.appendChild(div); chat.scrollTop=chat.scrollHeight; setTimeout(()=>addMsg(`Got your voice note 🎙️ Thanks for sending it. How are you feeling after saying that out loud?`,'buddy'),800); }
+function quickMood(){ const chat=document.getElementById('chat'); const div=document.createElement('div'); div.className='msg buddy'; div.innerHTML=`How are you feeling?<div class="mood-row"><button onclick="logMood('😁 Great')">😁 Great</button><button onclick="logMood('🙂 Okay')">🙂 Okay</button></div><div class="mood-row"><button onclick="logMood('😐 Meh')">😐 Meh</button><button onclick="logMood('😞 Low')">😞 Low</button></div><small>${nowTime()} ✓✓</small>`; chat.appendChild(div); chat.scrollTop=chat.scrollHeight; }
+function logMood(m){ addMsg(m,'me'); if(tg) tg.sendData(JSON.stringify({action:'mood',mood:m})); setTimeout(()=>addMsg(`Mood: ${m} logged. 🔥 Next: What's ONE tiny goal for today?`,'buddy'),500); }
+function quickGoal(){ const g=prompt('What is your goal?'); if(!g) return; if(tg) tg.sendData(JSON.stringify({action:'goal',text:g})); addMsg('🎯 Goal: '+g,'me'); setTimeout(()=>addMsg(`Goal saved! When do you want it done? TODAY / THIS WEEK / THIS MONTH?`,'buddy'),500); }
+function quickJournal(){ const p=["What made you smile today?","What would make tomorrow 1% better?","What do you need more of — rest, focus, or connection?"]; addMsg('📓 Journal: '+p[Math.floor(Math.random()*p.length)]+'\n\nReply with your thoughts — I will give you a next step.','buddy'); }
 function watchAdForVip(){
   if(!onclickaRewardedShow){ addMsg('⏳ Loading ad... try again in 2 sec','buddy'); return; }
-  addMsg('📺 Loading rewarded ad for Free VIP Day...','me');
-  onclickaRewardedShow().then(()=>{ addMsg('🎉 +1 FREE VIP Day unlocked! You now have unlimited goals + 5 voice slots for 24h. Enjoy!','buddy'); if(tg) tg.HapticFeedback?.notificationOccurred('success'); }).catch(()=>addMsg('⚠️ Watch full ad to unlock VIP Day. Try again.','buddy'));
+  addMsg('📺 Loading ad for Free VIP Day...','me');
+  onclickaRewardedShow().then(()=>addMsg('🎉 +1 FREE VIP Day unlocked!','buddy')).catch(()=>addMsg('⚠️ Watch full ad to unlock.','buddy'));
 }
-function buyVip(){ if(tg){ tg.sendData(JSON.stringify({action:'buy_vip',type:'month'})); addMsg('👑 Opening VIP checkout... Check bot chat for payment.','buddy'); } else { alert('Open in Telegram to buy VIP'); } }
-if(messages.length>0){ document.getElementById('chat').innerHTML='<div class="day-label">TODAY</div>'; messages.forEach(m=>{ const chat=document.getElementById('chat'); const div=document.createElement('div'); div.className='msg '+m.who; div.innerHTML=m.text+`<small>${nowTime()} ✓✓</small>`; chat.appendChild(div); }); }
+function buyVip(){ if(tg){ tg.sendData(JSON.stringify({action:'buy_vip',type:'month'})); addMsg('👑 Opening VIP checkout...','buddy'); } else alert('Open in Telegram'); }
 </script>
 </body>
-  </html>
+</html>
